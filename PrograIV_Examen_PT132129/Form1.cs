@@ -29,24 +29,20 @@ namespace PrograIV_Examen_PT132129
             //Show dialog to recibe file
             DialogResult result = openFileDialog1.ShowDialog();
 
+            //Instant for get file location
             string file = openFileDialog1.FileName;
 
-            DataTable tbl = new DataTable();
-
-            MessageBox.Show(file);
+            //MessageBox.Show(file);
 
             string texto;
 
             string[] split = null;
 
             int count = 4;
-
-            var encoding = Encoding.UTF8;
-
-            StreamReader tr = new StreamReader(file, Encoding.Default, true);
-
-            //var content = File.ReadAllText(file, encoding);
             
+            //Adding encoding parameters for characters like í 
+            StreamReader tr = new StreamReader(file, Encoding.Default, true);
+           
             while ((texto = tr.ReadLine()) != null)
             {                        
                 //this.textBoxPwd.Text += texto;                        
@@ -57,8 +53,59 @@ namespace PrograIV_Examen_PT132129
             
             MessageBox.Show("Le archivo se cargo correctamente", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            //Values for combobox
+            comboBox1.Items.Add("Nombre");
+            comboBox1.Items.Add("Apellido");
+            comboBox1.Items.Add("Edad");
+            comboBox1.Items.Add("Estatura");
+        }
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string metodo;
+            string forma;
+
+            //Para determinar el metodo de ordenamiento escogido por el usuario
+            if (bsrbtn.Checked)
+            {
+
+                //Para determinar la forma de ordenar escodiga por el usuario
+                if (asrbtn.Checked)
+                {
+                    //BubbleSort & Ascendente
+
+
+                }
+                else
+                {
+                    //BubbleSort & Descendente
+
+                }
+            
+                
+            }
+            else 
+            {
+                //Para determinar la forma de ordenar escodiga por el usuario
+                if (asrbtn.Checked)
+                {
+                    //SelectionSort & Ascendente
+
+                }
+                else
+                {
+                    //SelectionSort & Descendente
+
+                }
+
+            }
 
         }
+
     }
 }

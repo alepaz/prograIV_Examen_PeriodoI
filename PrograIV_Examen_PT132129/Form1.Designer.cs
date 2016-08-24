@@ -36,11 +36,11 @@
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.ssrbtn = new System.Windows.Forms.RadioButton();
+            this.bsrbtn = new System.Windows.Forms.RadioButton();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
+            this.dsrbtn = new System.Windows.Forms.RadioButton();
+            this.asrbtn = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -100,6 +100,7 @@
             this.button2.TabIndex = 4;
             this.button2.Text = "Ordenar";
             this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button3
             // 
@@ -123,8 +124,8 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
+            this.groupBox1.Controls.Add(this.ssrbtn);
+            this.groupBox1.Controls.Add(this.bsrbtn);
             this.groupBox1.Location = new System.Drawing.Point(35, 150);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(200, 57);
@@ -132,32 +133,33 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Método de Ordenamiento";
             // 
-            // radioButton2
+            // ssrbtn
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(98, 20);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(88, 17);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "SelectionSort";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.ssrbtn.AutoSize = true;
+            this.ssrbtn.Location = new System.Drawing.Point(98, 20);
+            this.ssrbtn.Name = "ssrbtn";
+            this.ssrbtn.Size = new System.Drawing.Size(88, 17);
+            this.ssrbtn.TabIndex = 1;
+            this.ssrbtn.TabStop = true;
+            this.ssrbtn.Text = "SelectionSort";
+            this.ssrbtn.UseVisualStyleBackColor = true;
             // 
-            // radioButton1
+            // bsrbtn
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(7, 20);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(77, 17);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "BubbleSort";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.bsrbtn.AutoSize = true;
+            this.bsrbtn.Checked = true;
+            this.bsrbtn.Location = new System.Drawing.Point(7, 20);
+            this.bsrbtn.Name = "bsrbtn";
+            this.bsrbtn.Size = new System.Drawing.Size(77, 17);
+            this.bsrbtn.TabIndex = 0;
+            this.bsrbtn.TabStop = true;
+            this.bsrbtn.Text = "BubbleSort";
+            this.bsrbtn.UseVisualStyleBackColor = true;
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.radioButton3);
-            this.groupBox2.Controls.Add(this.radioButton4);
+            this.groupBox2.Controls.Add(this.dsrbtn);
+            this.groupBox2.Controls.Add(this.asrbtn);
             this.groupBox2.Location = new System.Drawing.Point(35, 213);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(200, 57);
@@ -165,27 +167,28 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Forma de Ordenamiento";
             // 
-            // radioButton3
+            // dsrbtn
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(98, 21);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(89, 17);
-            this.radioButton3.TabIndex = 3;
-            this.radioButton3.TabStop = true;
-            this.radioButton3.Text = "Descendente";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.dsrbtn.AutoSize = true;
+            this.dsrbtn.Location = new System.Drawing.Point(98, 21);
+            this.dsrbtn.Name = "dsrbtn";
+            this.dsrbtn.Size = new System.Drawing.Size(89, 17);
+            this.dsrbtn.TabIndex = 3;
+            this.dsrbtn.TabStop = true;
+            this.dsrbtn.Text = "Descendente";
+            this.dsrbtn.UseVisualStyleBackColor = true;
             // 
-            // radioButton4
+            // asrbtn
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(7, 21);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(82, 17);
-            this.radioButton4.TabIndex = 2;
-            this.radioButton4.TabStop = true;
-            this.radioButton4.Text = "Ascendente";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.asrbtn.AutoSize = true;
+            this.asrbtn.Checked = true;
+            this.asrbtn.Location = new System.Drawing.Point(7, 21);
+            this.asrbtn.Name = "asrbtn";
+            this.asrbtn.Size = new System.Drawing.Size(82, 17);
+            this.asrbtn.TabIndex = 2;
+            this.asrbtn.TabStop = true;
+            this.asrbtn.Text = "Ascendente";
+            this.asrbtn.UseVisualStyleBackColor = true;
             // 
             // groupBox3
             // 
@@ -256,6 +259,7 @@
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Examen Progra IV";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
@@ -278,10 +282,10 @@
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton4;
+        private System.Windows.Forms.RadioButton ssrbtn;
+        private System.Windows.Forms.RadioButton bsrbtn;
+        private System.Windows.Forms.RadioButton dsrbtn;
+        private System.Windows.Forms.RadioButton asrbtn;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
