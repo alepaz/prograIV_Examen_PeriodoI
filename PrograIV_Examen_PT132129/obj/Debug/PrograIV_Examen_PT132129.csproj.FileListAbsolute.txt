@@ -1,2 +1,10 @@
 C:\Users\usuario\AppData\Local\Temporary Projects\PrograIV_Examen_PT132129\bin\Debug\PrograIV_Examen_PT132129.exe.config
 C:\Users\usuario\Desktop\PrograIV_Examen_PT132129\PrograIV_Examen_PT132129\bin\Debug\PrograIV_Examen_PT132129.exe.config
+C:\Users\usuario\Desktop\PrograIV_Examen_PT132129\PrograIV_Examen_PT132129\bin\Debug\PrograIV_Examen_PT132129.exe
+C:\Users\usuario\Desktop\PrograIV_Examen_PT132129\PrograIV_Examen_PT132129\bin\Debug\PrograIV_Examen_PT132129.pdb
+C:\Users\usuario\Desktop\PrograIV_Examen_PT132129\PrograIV_Examen_PT132129\obj\Debug\PrograIV_Examen_PT132129.csprojResolveAssemblyReference.cache
+C:\Users\usuario\Desktop\PrograIV_Examen_PT132129\PrograIV_Examen_PT132129\obj\Debug\PrograIV_Examen_PT132129.Form1.resources
+C:\Users\usuario\Desktop\PrograIV_Examen_PT132129\PrograIV_Examen_PT132129\obj\Debug\PrograIV_Examen_PT132129.Properties.Resources.resources
+C:\Users\usuario\Desktop\PrograIV_Examen_PT132129\PrograIV_Examen_PT132129\obj\Debug\PrograIV_Examen_PT132129.csproj.GenerateResource.Cache
+C:\Users\usuario\Desktop\PrograIV_Examen_PT132129\PrograIV_Examen_PT132129\obj\Debug\PrograIV_Examen_PT132129.exe
+C:\Users\usuario\Desktop\PrograIV_Examen_PT132129\PrograIV_Examen_PT132129\obj\Debug\PrograIV_Examen_PT132129.pdb
