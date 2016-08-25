@@ -42,17 +42,21 @@ namespace PrograIV_Examen_PT132129
             
             //Adding encoding parameters for characters like í 
             StreamReader tr = new StreamReader(file, Encoding.Default, true);
-           
-            while ((texto = tr.ReadLine()) != null)
-            {                        
-                //this.textBoxPwd.Text += texto;                        
-                split = texto.Split(new Char[] { ',' }, count);                        
-                dataGridView1.Rows.Add(split[0], split[1], split[2], split[3]);                        
-                split = null;                    
-            }                        
-            
-            MessageBox.Show("Le archivo se cargo correctamente", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            try
+            {
+                while ((texto = tr.ReadLine()) != null)
+                {
+                    //this.textBoxPwd.Text += texto;                        
+                    split = texto.Split(new Char[] { ',' }, count);
+                    dataGridView1.Rows.Add(split[0], split[1], split[2], split[3]);
+                    split = null;
+                }
 
+                MessageBox.Show("Le archivo se cargo correctamente", "OK", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch {
+                MessageBox.Show("El archivo tiene el formato adecuado?");
+            }
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -69,6 +73,7 @@ namespace PrograIV_Examen_PT132129
             int indiceTemp = 0;
             //Para cambiar los indices
 
+            //Si es ascendentemente
             if (band) { 
             for (int i = 1; i < s.Length; i++)
                 {
@@ -87,7 +92,7 @@ namespace PrograIV_Examen_PT132129
                         }
                     }
                 }
-            }else { 
+            }else { //Descendente
             for (int i = 0; i < s.Length - 1; i++)
                 for (int j = i + 1; j < s.Length; j++)
                     if (s[i].CompareTo(s[j]) < 0)
@@ -109,6 +114,73 @@ namespace PrograIV_Examen_PT132129
             }*/
         }
 
+        public void SelectionSort(ref string[] s, ref int[] num, bool band)
+        {
+            string temp = string.Empty;
+            int indiceTemp = 0;
+            int pos_min;
+            //Para cambiar los indices
+
+            //Si es ascendentemente
+            if (band)
+            {
+                for (int i = 0; i < s.Length - 1; i++)
+                {
+                    pos_min = i; //set pos_min to the current index of array
+
+                    for (int j = i + 1; j < s.Length; j++)
+                    {
+                        // We now use 'CompareTo' instead of '<'
+                        if (s[j].CompareTo(s[pos_min]) < 0)
+                        {
+                            //pos_min will keep track of the index that min is in, this is needed when a swap happens
+                            pos_min = j;
+                        }
+                    }
+
+                    //if pos_min no longer equals i than a smaller value must have been found, so a swap must occur
+                    if (pos_min != i)
+                    {
+                        indiceTemp = num[i];
+                        temp = s[i];
+
+                        num[i] = num[pos_min];
+                        s[i] = s[pos_min];
+
+                        num[pos_min] = indiceTemp;
+                        s[pos_min] = temp;
+                    }
+                }
+            }
+            else
+            { //Descendente
+
+                for (int i = 0; i < s.Length - 1; i++)
+                {
+                    int maxIndex = i;
+                    for (int j = i + 1; j < s.Length; j++)
+                    {
+                        if (s[j].CompareTo(s[maxIndex]) > 0) maxIndex = j;
+                    }
+
+                    indiceTemp = num[i];
+                    temp = s[i];
+
+                    num[i] = num[maxIndex];
+                    s[i] = s[maxIndex];
+
+                    num[maxIndex] = indiceTemp;
+                    s[maxIndex] = temp;
+                }
+
+            }
+            /*for (int i = 0; i < s.Length; i++)
+            {
+                MessageBox.Show(s[i] + " ");
+                MessageBox.Show(num[i] + " ");
+            }*/
+        }
+
         public void ClearDataGrid() {
             //Limpiamos y refrescamos
             dataGridView1.Rows.Clear();
@@ -120,8 +192,10 @@ namespace PrograIV_Examen_PT132129
         {
             //contador
             int i = 0;
+            
             //arreglos, uno servira de espejo para realizar el merge en la 
             int[] arreglo_numeros = new int[dataGridView1.Rows.Count] ;
+            
             //para almacenar los datos a ordenar
             string[] column0Array = new string[dataGridView1.Rows.Count];
             string[] column1Array = new string[dataGridView1.Rows.Count];
@@ -301,10 +375,151 @@ namespace PrograIV_Examen_PT132129
                 {
                     //SelectionSort & Ascendente
 
+                    try
+                    {
+
+                        switch (cbxRegistro.SelectedItem.ToString())
+                        {
+                            case "Nombre":
+                                SelectionSort(ref column0Array, ref arreglo_numeros, true);
+
+                                //Limpiamos el datagridview
+                                ClearDataGrid();
+
+                                //En caso que sea ordenado por nombre
+                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                {
+                                    dataGridView1.Rows.Add(column0Array[i], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                }
+
+                                break;
+                            case "Apellido":
+                                SelectionSort(ref column1Array, ref arreglo_numeros, true);
+
+                                //Limpiamos el datagridview
+                                ClearDataGrid();
+
+                                //En caso que sea ordenado por apellido
+                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                {
+                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[i], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                }
+                                break;
+                            case "Edad":
+
+                                SelectionSort(ref column2Array, ref arreglo_numeros, true);
+
+                                //Limpiamos el datagridview
+                                ClearDataGrid();
+
+                                //En caso que sea ordenado por edad
+                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                {
+                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[i], column3Array[arreglo_numeros[i]]);
+
+                                }
+                                break;
+                            case "Estatura":
+                                SelectionSort(ref column3Array, ref arreglo_numeros, true);
+
+                                //Limpiamos el datagridview
+                                ClearDataGrid();
+
+                                //En caso que sea ordenado por altura
+                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                {
+                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[i]);
+
+                                }
+                                break;
+                            default:
+                                MessageBox.Show("opcion incorrecta");
+                                break;
+                        }
+
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Por favor seleccione el dato por el que desea ordenarlo");
+                    }
+
+
                 }
                 else
                 {
                     //SelectionSort & Descendente
+
+                    try
+                    {
+
+                        switch (cbxRegistro.SelectedItem.ToString())
+                        {
+                            case "Nombre":
+                                SelectionSort(ref column0Array, ref arreglo_numeros, false);
+
+                                //Limpiamos el datagridview
+                                ClearDataGrid();
+
+                                //En caso que sea ordenado por nombre
+                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                {
+                                    dataGridView1.Rows.Add(column0Array[i], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                }
+
+                                break;
+                            case "Apellido":
+                                SelectionSort(ref column1Array, ref arreglo_numeros, false);
+
+                                //Limpiamos el datagridview
+                                ClearDataGrid();
+
+                                //En caso que sea ordenado por apellido
+                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                {
+                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[i], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                }
+                                break;
+                            case "Edad":
+
+                                SelectionSort(ref column2Array, ref arreglo_numeros, false);
+
+                                //Limpiamos el datagridview
+                                ClearDataGrid();
+
+                                //En caso que sea ordenado por edad
+                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                {
+                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[i], column3Array[arreglo_numeros[i]]);
+
+                                }
+                                break;
+                            case "Estatura":
+                                SelectionSort(ref column3Array, ref arreglo_numeros, false);
+
+                                //Limpiamos el datagridview
+                                ClearDataGrid();
+
+                                //En caso que sea ordenado por altura
+                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                {
+                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[i]);
+
+                                }
+                                break;
+                            default:
+                                MessageBox.Show("opcion incorrecta");
+                                break;
+                        }
+
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Por favor seleccione el dato por el que desea ordenarlo");
+                    }
 
                 }
 
@@ -312,5 +527,9 @@ namespace PrograIV_Examen_PT132129
 
         }
 
+        private void button4_Click(object sender, EventArgs e)
+        {
+            ClearDataGrid();
+        }
     }
 }
