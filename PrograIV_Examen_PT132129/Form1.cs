@@ -243,9 +243,10 @@ namespace PrograIV_Examen_PT132129
 
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
-
-                                //Creacion del archivo
-                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByNameUsingBubbleSortAscend.txt", true)) {
+                                try
+                                {
+                                    //Creacion del archivo
+                                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByNameUsingBubbleSortAscend.txt", false)) {
 
                                     //En caso que sea ordenado por nombre
                                     for (i = 0; i < arreglo_numeros.Length; i++)
@@ -256,6 +257,13 @@ namespace PrograIV_Examen_PT132129
                                     }
                                 }
 
+                                    MessageBox.Show("Archivo creado en C:/TEMP/");
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Necesito la carpeta C:/TEMP/");
+                                }
+
                                 break;
                             case "Apellido":
                                 BubbleSort(ref column1Array, ref arreglo_numeros, true);
@@ -263,11 +271,12 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //Creacion del archivo
-                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByLastNameUsingBubbleSortAscend.txt", true))
+                                try
                                 {
 
-
+                                    //Creacion del archivo
+                                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByLastNameUsingBubbleSortAscend.txt", false))
+                                {
                                     //En caso que sea ordenado por apellido
                                     for (i = 0; i < arreglo_numeros.Length; i++)
                                     {
@@ -275,6 +284,12 @@ namespace PrograIV_Examen_PT132129
                                         dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[i], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
 
                                     }
+                                }
+                                    MessageBox.Show("Archivo creado en C:/TEMP/");
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
                                 break;
                             case "Edad":
@@ -284,8 +299,11 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //Creacion del archivo
-                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByAgeUsingBubbleSortAscend.txt", true))
+                                try
+                                {
+
+                                    //Creacion del archivo
+                                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByAgeUsingBubbleSortAscend.txt", false))
                                 {
 
                                     //En caso que sea ordenado por edad
@@ -296,6 +314,13 @@ namespace PrograIV_Examen_PT132129
 
                                     }
                                 }
+
+                                    MessageBox.Show("Archivo creado en C:/TEMP/");
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Necesito la carpeta C:/TEMP/");
+                                }
                                 break;
                             case "Estatura":
                                 BubbleSort(ref column3Array, ref arreglo_numeros, true);
@@ -303,8 +328,11 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //Creacion del archivo
-                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByHeightUsingBubbleSortAscend.txt", true))
+                                try
+                                {
+
+                                    //Creacion del archivo
+                                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByHeightUsingBubbleSortAscend.txt", false))
                                 {
 
                                     //En caso que sea ordenado por altura
@@ -315,6 +343,13 @@ namespace PrograIV_Examen_PT132129
 
                                     }
                                 }
+                                    MessageBox.Show("Archivo creado en C:/TEMP/");
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Necesito la carpeta C:/TEMP/");
+                                }
+
                                 break;
                             default:
                                 MessageBox.Show("opcion incorrecta");
@@ -340,8 +375,11 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //Creacion del archivo
-                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByNameUsingBubbleSortDescend.txt", true))
+                                try
+                                {
+
+                                    //Creacion del archivo
+                                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByNameUsingBubbleSortDescend.txt", false))
                                 {
 
                                     //En caso que sea ordenado por nombre
@@ -352,16 +390,25 @@ namespace PrograIV_Examen_PT132129
 
                                     }
                                 }
+                                    MessageBox.Show("Archivo creado en C:/TEMP/");
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Necesito la carpeta C:/TEMP/");
+                                }
 
-                                    break;
+                                break;
                             case "Apellido":
                                 BubbleSort(ref column1Array, ref arreglo_numeros, false);
 
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //Creacion del archivo
-                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByLastNameUsingBubbleSortDescend.txt", true))
+                                try
+                                {
+
+                                    //Creacion del archivo
+                                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByLastNameUsingBubbleSortDescend.txt", false))
                                 {
 
                                     //En caso que sea ordenado por apellido
@@ -372,6 +419,12 @@ namespace PrograIV_Examen_PT132129
 
                                     }
                                 }
+                                    MessageBox.Show("Archivo creado en C:/TEMP/");
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Necesito la carpeta C:/TEMP/");
+                                }
                                 break;
                             case "Edad":
 
@@ -380,8 +433,11 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //Creacion del archivo
-                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByAgeUsingBubbleSortDescend.txt", true))
+                                try
+                                {
+
+                                    //Creacion del archivo
+                                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByAgeUsingBubbleSortDescend.txt", false))
                                 {
 
                                     //En caso que sea ordenado por edad
@@ -392,6 +448,12 @@ namespace PrograIV_Examen_PT132129
 
                                     }
                                 }
+                                    MessageBox.Show("Archivo creado en C:/TEMP/");
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Necesito la carpeta C:/TEMP/");
+                                }
                                 break;
                             case "Estatura":
                                 BubbleSort(ref column3Array, ref arreglo_numeros, false);
@@ -399,8 +461,10 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //Creacion del archivo
-                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByHeightUsingBubbleSortDescend.txt", true))
+                                try
+                                {
+                                    //Creacion del archivo
+                                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByHeightUsingBubbleSortDescend.txt", false))
                                 {
 
                                     //En caso que sea ordenado por altura
@@ -411,7 +475,14 @@ namespace PrograIV_Examen_PT132129
 
                                     }
                                 }
-                                break;
+
+                                MessageBox.Show("Archivo creado en C:/TEMP/");
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Necesito la carpeta C:/TEMP/");
+                                }
+                    break;
                             default:
                                 MessageBox.Show("opcion incorrecta");
                                 break;
@@ -444,9 +515,10 @@ namespace PrograIV_Examen_PT132129
 
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
-
-                                //Creacion del archivo
-                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByNameUsingSelectionSortAscend.txt", true))
+                                try
+                                {
+                                    //Creacion del archivo
+                                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByNameUsingSelectionSortAscend.txt", false))
                                 {
 
                                     //En caso que sea ordenado por nombre
@@ -457,16 +529,22 @@ namespace PrograIV_Examen_PT132129
 
                                     }
                                 }
-
+                                    MessageBox.Show("Archivo creado en C:/TEMP/");
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Necesito la carpeta C:/TEMP/");
+                                }
                                 break;
                             case "Apellido":
                                 SelectionSort(ref column1Array, ref arreglo_numeros, true);
 
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
-
-                                //Creacion del archivo
-                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByLastNameUsingSelectionSortAscend.txt", true))
+                                try
+                                {
+                                    //Creacion del archivo
+                                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByLastNameUsingSelectionSortAscend.txt", false))
                                 {
 
 
@@ -478,6 +556,12 @@ namespace PrograIV_Examen_PT132129
 
                                     }
                                 }
+                                    MessageBox.Show("Archivo creado en C:/TEMP/");
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Necesito la carpeta C:/TEMP/");
+                                }
                                 break;
                             case "Edad":
 
@@ -486,8 +570,10 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //Creacion del archivo
-                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByAgeUsingSelectionSortAscend.txt", true))
+                                try
+                                {
+                                    //Creacion del archivo
+                                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByAgeUsingSelectionSortAscend.txt", false))
                                 {
 
                                     //En caso que sea ordenado por edad
@@ -498,15 +584,22 @@ namespace PrograIV_Examen_PT132129
 
                                     }
                                 }
+                                    MessageBox.Show("Archivo creado en C:/TEMP/");
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Necesito la carpeta C:/TEMP/");
+                                }
                                 break;
                             case "Estatura":
                                 SelectionSort(ref column3Array, ref arreglo_numeros, true);
 
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
-
-                                //Creacion del archivo
-                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByHeightUsingSelectionSortAscend.txt", true))
+                                try
+                                {
+                                    //Creacion del archivo
+                                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByHeightUsingSelectionSortAscend.txt", false))
                                 {
 
                                     //En caso que sea ordenado por altura
@@ -516,6 +609,12 @@ namespace PrograIV_Examen_PT132129
                                         dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[i]);
 
                                     }
+                                }
+                                    MessageBox.Show("Archivo creado en C:/TEMP/");
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
                                 break;
                             default:
@@ -546,8 +645,11 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //Creacion del archivo
-                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByNameUsingSelectionSortDescend.txt", true))
+                                try
+                                {
+
+                                    //Creacion del archivo
+                                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByNameUsingSelectionSortDescend.txt", false))
                                 {
 
                                     //En caso que sea ordenado por nombre
@@ -558,7 +660,12 @@ namespace PrograIV_Examen_PT132129
 
                                     }
                                 }
-
+                                    MessageBox.Show("Archivo creado en C:/TEMP/");
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Necesito la carpeta C:/TEMP/");
+                                }
                                 break;
                             case "Apellido":
                                 SelectionSort(ref column1Array, ref arreglo_numeros, false);
@@ -566,8 +673,11 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //Creacion del archivo
-                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByLastNameUsingSelectionSortDescend.txt", true))
+                                try
+                                {
+
+                                    //Creacion del archivo
+                                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByLastNameUsingSelectionSortDescend.txt", false))
                                 {
 
                                     //En caso que sea ordenado por apellido
@@ -578,6 +688,12 @@ namespace PrograIV_Examen_PT132129
 
                                     }
                                 }
+                                    MessageBox.Show("Archivo creado en C:/TEMP/");
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Necesito la carpeta C:/TEMP/");
+                                }
                                 break;
                             case "Edad":
 
@@ -586,8 +702,11 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //Creacion del archivo
-                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByAgeUsingSelectionSortDescend.txt", true))
+                                try
+                                {
+
+                                    //Creacion del archivo
+                                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByAgeUsingSelectionSortDescend.txt", false))
                                 {
 
                                     //En caso que sea ordenado por edad
@@ -598,6 +717,13 @@ namespace PrograIV_Examen_PT132129
 
                                     }
                                 }
+
+                                    MessageBox.Show("Archivo creado en C:/TEMP/");
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Necesito la carpeta C:/TEMP/");
+                                }
                                 break;
                             case "Estatura":
                                 SelectionSort(ref column3Array, ref arreglo_numeros, false);
@@ -605,8 +731,11 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //Creacion del archivo
-                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByHeightUsingSelectionSortDescend.txt", true))
+                                try
+                                {
+
+                                    //Creacion del archivo
+                                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByHeightUsingSelectionSortDescend.txt", false))
                                 {
 
                                     //En caso que sea ordenado por altura
@@ -616,6 +745,12 @@ namespace PrograIV_Examen_PT132129
                                         dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[i]);
 
                                     }
+                                }
+                                    MessageBox.Show("Archivo creado en C:/TEMP/");
+                                }
+                                catch
+                                {
+                                    MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
                                 break;
                             default:
@@ -663,29 +798,38 @@ namespace PrograIV_Examen_PT132129
 
                 int count = dataGridView1.Rows.Count;
 
-                //Creacion del archivo
-                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\datos.txt", true))
+                try
                 {
-                    
-                    for (int row = 0; row < count; row++)
+                    //Creacion del archivo
+                    using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\datos.txt", false))
                     {
-                        int colCount = dataGridView1.Rows[row].Cells.Count;
-                        for (int col = 0; col < colCount; col++)
+
+                        for (int row = 0; row < count; row++)
                         {
-                            if(contadora > 0) { 
-                            file.Write(" , ");
+                            int colCount = dataGridView1.Rows[row].Cells.Count;
+                            for (int col = 0; col < colCount; col++)
+                            {
+                                if (contadora > 0)
+                                {
+                                    file.Write(" , ");
+                                }
+                                file.Write(dataGridView1.Rows[row].Cells[col].Value.ToString());
+                                contadora++;
                             }
-                            file.Write(dataGridView1.Rows[row].Cells[col].Value.ToString());
-                            contadora++;
+
+                            //no iria coma a continuacion
+                            contadora = 0;
+
+                            file.WriteLine();
+                            // record seperator could be written here.
                         }
 
-                        //no iria coma a continuacion
-                        contadora = 0;
-
-                        file.WriteLine();
-                        // record seperator could be written here.
                     }
 
+                    MessageBox.Show("Archivo creado en C:/TEMP/");
+                }
+                catch {
+                    MessageBox.Show("Necesito la carpeta C:/TEMP/");
                 }
             }
 
