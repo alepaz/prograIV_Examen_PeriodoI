@@ -33,6 +33,9 @@ namespace PrograIV_Examen_PT132129
 
         private void button1_Click(object sender, EventArgs e)
         {
+            //Al cargar un nuevo archivo se borran todos, pues podria cargar un repetido
+            ClearDataGrid();
+
             //Show dialog to recibe file
             DialogResult result = openFileDialog1.ShowDialog();
 
@@ -638,20 +641,13 @@ namespace PrograIV_Examen_PT132129
         }
 
         private void button3_Click(object sender, EventArgs e)
-        {
-            //Nuevo form para agregar informacion
-            AddData data = new AddData();
-            data.Show();
-
-            while (data.getFlag()) { 
-            
-        }
-            string nombre = data.getname();
-            MessageBox.Show(nombre.ToString());
-        }
+        { }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            //contador
+            int contadora = 0;
+
             //Bandera por defecto true,. si en algun obtener valor encuentra error 
             bandera = true;
 
@@ -665,6 +661,32 @@ namespace PrograIV_Examen_PT132129
             {
                 dataGridView1.Rows.Add(nombre, apellido, edad, estatura);
 
+                int count = dataGridView1.Rows.Count;
+
+                //Creacion del archivo
+                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\datos.txt", true))
+                {
+                    
+                    for (int row = 0; row < count; row++)
+                    {
+                        int colCount = dataGridView1.Rows[row].Cells.Count;
+                        for (int col = 0; col < colCount; col++)
+                        {
+                            if(contadora > 0) { 
+                            file.Write(" , ");
+                            }
+                            file.Write(dataGridView1.Rows[row].Cells[col].Value.ToString());
+                            contadora++;
+                        }
+
+                        //no iria coma a continuacion
+                        contadora = 0;
+
+                        file.WriteLine();
+                        // record seperator could be written here.
+                    }
+
+                }
             }
 
             limpiar_pantalla();

@@ -17,4 +17,3 @@ C:\Users\Alepaz\Desktop\prograIV_Examen_PeriodoI\PrograIV_Examen_PT132129\obj\De
 C:\Users\Alepaz\Desktop\prograIV_Examen_PeriodoI\PrograIV_Examen_PT132129\obj\Debug\PrograIV_Examen_PT132129.Form1.resources
 C:\Users\Alepaz\Desktop\prograIV_Examen_PeriodoI\PrograIV_Examen_PT132129\obj\Debug\PrograIV_Examen_PT132129.Properties.Resources.resources
 C:\Users\Alepaz\Desktop\prograIV_Examen_PeriodoI\PrograIV_Examen_PT132129\obj\Debug\PrograIV_Examen_PT132129.csproj.GenerateResource.Cache
-C:\Users\Alepaz\Desktop\prograIV_Examen_PeriodoI\PrograIV_Examen_PT132129\obj\Debug\PrograIV_Examen_PT132129.AddData.resources
