@@ -163,6 +163,7 @@ namespace PrograIV_Examen_PT132129
                         if (s[j].CompareTo(s[maxIndex]) > 0) maxIndex = j;
                     }
 
+                    //Swap for i and index
                     indiceTemp = num[i];
                     temp = s[i];
 
@@ -233,11 +234,16 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //En caso que sea ordenado por nombre
-                                for (i = 0; i < arreglo_numeros.Length; i++)
-                                {
-                                    dataGridView1.Rows.Add(column0Array[i], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+                                //Creacion del archivo
+                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByNameUsingBubbleSortAscend.txt", true)) {
 
+                                    //En caso que sea ordenado por nombre
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        file.WriteLine(column0Array[i] + " , " + column1Array[arreglo_numeros[i]] + " , " + column2Array[arreglo_numeros[i]] + " , " + column3Array[arreglo_numeros[i]]);
+                                        dataGridView1.Rows.Add(column0Array[i], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                 }
 
                                 break;
@@ -247,11 +253,18 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //En caso que sea ordenado por apellido
-                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                //Creacion del archivo
+                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByLastNameUsingBubbleSortAscend.txt", true))
                                 {
-                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[i], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
 
+
+                                    //En caso que sea ordenado por apellido
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        file.WriteLine(column0Array[arreglo_numeros[i]] + " , " + column1Array[i] + " , " + column2Array[arreglo_numeros[i]] + " , " + column3Array[arreglo_numeros[i]]);
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[i], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                 }
                                 break;
                             case "Edad":
@@ -261,11 +274,17 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //En caso que sea ordenado por edad
-                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                //Creacion del archivo
+                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByAgeUsingBubbleSortAscend.txt", true))
                                 {
-                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[i], column3Array[arreglo_numeros[i]]);
 
+                                    //En caso que sea ordenado por edad
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        file.WriteLine(column0Array[arreglo_numeros[i]] + " , " + column1Array[arreglo_numeros[i]] + " , " + column2Array[i] + " , " + column3Array[arreglo_numeros[i]]);
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[i], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                 }
                                 break;
                             case "Estatura":
@@ -274,11 +293,17 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //En caso que sea ordenado por altura
-                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                //Creacion del archivo
+                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByHeightUsingBubbleSortAscend.txt", true))
                                 {
-                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[i]);
 
+                                    //En caso que sea ordenado por altura
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        file.WriteLine(column0Array[arreglo_numeros[i]] + " , " + column1Array[arreglo_numeros[i]] + " , " + column2Array[arreglo_numeros[i]] + " , " + column3Array[i]);
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[i]);
+
+                                    }
                                 }
                                 break;
                             default:
@@ -305,25 +330,37 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //En caso que sea ordenado por nombre
-                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                //Creacion del archivo
+                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByNameUsingBubbleSortDescend.txt", true))
                                 {
-                                    dataGridView1.Rows.Add(column0Array[i], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
 
+                                    //En caso que sea ordenado por nombre
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        file.WriteLine(column0Array[i] + " , " + column1Array[arreglo_numeros[i]] + " , " + column2Array[arreglo_numeros[i]] + " , " + column3Array[arreglo_numeros[i]]);
+                                        dataGridView1.Rows.Add(column0Array[i], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                 }
 
-                                break;
+                                    break;
                             case "Apellido":
                                 BubbleSort(ref column1Array, ref arreglo_numeros, false);
 
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //En caso que sea ordenado por apellido
-                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                //Creacion del archivo
+                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByLastNameUsingBubbleSortDescend.txt", true))
                                 {
-                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[i], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
 
+                                    //En caso que sea ordenado por apellido
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        file.WriteLine(column0Array[arreglo_numeros[i]] + " , " + column1Array[i] + " , " + column2Array[arreglo_numeros[i]] + " , " + column3Array[arreglo_numeros[i]]);
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[i], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                 }
                                 break;
                             case "Edad":
@@ -333,11 +370,17 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //En caso que sea ordenado por edad
-                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                //Creacion del archivo
+                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByAgeUsingBubbleSortDescend.txt", true))
                                 {
-                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[i], column3Array[arreglo_numeros[i]]);
 
+                                    //En caso que sea ordenado por edad
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        file.WriteLine(column0Array[arreglo_numeros[i]] + " , " + column1Array[arreglo_numeros[i]] + " , " + column2Array[i] + " , " + column3Array[arreglo_numeros[i]]);
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[i], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                 }
                                 break;
                             case "Estatura":
@@ -346,11 +389,17 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //En caso que sea ordenado por altura
-                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                //Creacion del archivo
+                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByHeightUsingBubbleSortDescend.txt", true))
                                 {
-                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[i]);
 
+                                    //En caso que sea ordenado por altura
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        file.WriteLine(column0Array[arreglo_numeros[i]] + " , " + column1Array[arreglo_numeros[i]] + " , " + column2Array[arreglo_numeros[i]] + " , " + column3Array[i]);
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[i]);
+
+                                    }
                                 }
                                 break;
                             default:
@@ -386,11 +435,17 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //En caso que sea ordenado por nombre
-                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                //Creacion del archivo
+                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByNameUsingSelectionSortAscend.txt", true))
                                 {
-                                    dataGridView1.Rows.Add(column0Array[i], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
 
+                                    //En caso que sea ordenado por nombre
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        file.WriteLine(column0Array[i] + " , " + column1Array[arreglo_numeros[i]] + " , " + column2Array[arreglo_numeros[i]] + " , " + column3Array[arreglo_numeros[i]]);
+                                        dataGridView1.Rows.Add(column0Array[i], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                 }
 
                                 break;
@@ -400,11 +455,18 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //En caso que sea ordenado por apellido
-                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                //Creacion del archivo
+                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByLastNameUsingSelectionSortAscend.txt", true))
                                 {
-                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[i], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
 
+
+                                    //En caso que sea ordenado por apellido
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        file.WriteLine(column0Array[arreglo_numeros[i]] + " , " + column1Array[i] + " , " + column2Array[arreglo_numeros[i]] + " , " + column3Array[arreglo_numeros[i]]);
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[i], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                 }
                                 break;
                             case "Edad":
@@ -414,11 +476,17 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //En caso que sea ordenado por edad
-                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                //Creacion del archivo
+                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByAgeUsingSelectionSortAscend.txt", true))
                                 {
-                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[i], column3Array[arreglo_numeros[i]]);
 
+                                    //En caso que sea ordenado por edad
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        file.WriteLine(column0Array[arreglo_numeros[i]] + " , " + column1Array[arreglo_numeros[i]] + " , " + column2Array[i] + " , " + column3Array[arreglo_numeros[i]]);
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[i], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                 }
                                 break;
                             case "Estatura":
@@ -427,11 +495,17 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //En caso que sea ordenado por altura
-                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                //Creacion del archivo
+                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByHeightUsingSelectionSortAscend.txt", true))
                                 {
-                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[i]);
 
+                                    //En caso que sea ordenado por altura
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        file.WriteLine(column0Array[arreglo_numeros[i]] + " , " + column1Array[arreglo_numeros[i]] + " , " + column2Array[arreglo_numeros[i]] + " , " + column3Array[i]);
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[i]);
+
+                                    }
                                 }
                                 break;
                             default:
@@ -462,11 +536,17 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //En caso que sea ordenado por nombre
-                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                //Creacion del archivo
+                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByNameUsingSelectionSortDescend.txt", true))
                                 {
-                                    dataGridView1.Rows.Add(column0Array[i], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
 
+                                    //En caso que sea ordenado por nombre
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        file.WriteLine(column0Array[i] + " , " + column1Array[arreglo_numeros[i]] + " , " + column2Array[arreglo_numeros[i]] + " , " + column3Array[arreglo_numeros[i]]);
+                                        dataGridView1.Rows.Add(column0Array[i], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                 }
 
                                 break;
@@ -476,11 +556,17 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //En caso que sea ordenado por apellido
-                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                //Creacion del archivo
+                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByLastNameUsingSelectionSortDescend.txt", true))
                                 {
-                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[i], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
 
+                                    //En caso que sea ordenado por apellido
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        file.WriteLine(column0Array[arreglo_numeros[i]] + " , " + column1Array[i] + " , " + column2Array[arreglo_numeros[i]] + " , " + column3Array[arreglo_numeros[i]]);
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[i], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                 }
                                 break;
                             case "Edad":
@@ -490,11 +576,17 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //En caso que sea ordenado por edad
-                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                //Creacion del archivo
+                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByAgeUsingSelectionSortDescend.txt", true))
                                 {
-                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[i], column3Array[arreglo_numeros[i]]);
 
+                                    //En caso que sea ordenado por edad
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        file.WriteLine(column0Array[arreglo_numeros[i]] + " , " + column1Array[arreglo_numeros[i]] + " , " + column2Array[i] + " , " + column3Array[arreglo_numeros[i]]);
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[i], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                 }
                                 break;
                             case "Estatura":
@@ -503,11 +595,17 @@ namespace PrograIV_Examen_PT132129
                                 //Limpiamos el datagridview
                                 ClearDataGrid();
 
-                                //En caso que sea ordenado por altura
-                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                //Creacion del archivo
+                                using (System.IO.StreamWriter file = new System.IO.StreamWriter(@"C:\TEMP\SorterByHeightUsingSelectionSortDescend.txt", true))
                                 {
-                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[i]);
 
+                                    //En caso que sea ordenado por altura
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        file.WriteLine(column0Array[arreglo_numeros[i]] + " , " + column1Array[arreglo_numeros[i]] + " , " + column2Array[arreglo_numeros[i]] + " , " + column3Array[i]);
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[i]);
+
+                                    }
                                 }
                                 break;
                             default:
