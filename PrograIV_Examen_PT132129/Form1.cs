@@ -261,6 +261,12 @@ namespace PrograIV_Examen_PT132129
                                 }
                                 catch
                                 {
+                                    //Restart
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        dataGridView1.Rows.Add(column0Array[i], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                     MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
 
@@ -289,6 +295,11 @@ namespace PrograIV_Examen_PT132129
                                 }
                                 catch
                                 {
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[i], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                     MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
                                 break;
@@ -319,6 +330,11 @@ namespace PrograIV_Examen_PT132129
                                 }
                                 catch
                                 {
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[i], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                     MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
                                 break;
@@ -347,6 +363,11 @@ namespace PrograIV_Examen_PT132129
                                 }
                                 catch
                                 {
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[i]);
+
+                                    }
                                     MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
 
@@ -394,6 +415,11 @@ namespace PrograIV_Examen_PT132129
                                 }
                                 catch
                                 {
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        dataGridView1.Rows.Add(column0Array[i], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                     MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
 
@@ -423,6 +449,11 @@ namespace PrograIV_Examen_PT132129
                                 }
                                 catch
                                 {
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[i], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                     MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
                                 break;
@@ -452,6 +483,11 @@ namespace PrograIV_Examen_PT132129
                                 }
                                 catch
                                 {
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[i], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                     MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
                                 break;
@@ -480,6 +516,11 @@ namespace PrograIV_Examen_PT132129
                                 }
                                 catch
                                 {
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[i]);
+
+                                    }
                                     MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
                     break;
@@ -533,6 +574,11 @@ namespace PrograIV_Examen_PT132129
                                 }
                                 catch
                                 {
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        dataGridView1.Rows.Add(column0Array[i], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                     MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
                                 break;
@@ -560,6 +606,11 @@ namespace PrograIV_Examen_PT132129
                                 }
                                 catch
                                 {
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[i], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                     MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
                                 break;
@@ -588,6 +639,11 @@ namespace PrograIV_Examen_PT132129
                                 }
                                 catch
                                 {
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[i], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                     MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
                                 break;
@@ -614,6 +670,11 @@ namespace PrograIV_Examen_PT132129
                                 }
                                 catch
                                 {
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[i]);
+
+                                    }
                                     MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
                                 break;
@@ -664,6 +725,11 @@ namespace PrograIV_Examen_PT132129
                                 }
                                 catch
                                 {
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        dataGridView1.Rows.Add(column0Array[i], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                     MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
                                 break;
@@ -692,6 +758,11 @@ namespace PrograIV_Examen_PT132129
                                 }
                                 catch
                                 {
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[i], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                     MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
                                 break;
@@ -722,6 +793,11 @@ namespace PrograIV_Examen_PT132129
                                 }
                                 catch
                                 {
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[i], column3Array[arreglo_numeros[i]]);
+
+                                    }
                                     MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
                                 break;
@@ -750,6 +826,11 @@ namespace PrograIV_Examen_PT132129
                                 }
                                 catch
                                 {
+                                    for (i = 0; i < arreglo_numeros.Length; i++)
+                                    {
+                                        dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[i]);
+
+                                    }
                                     MessageBox.Show("Necesito la carpeta C:/TEMP/");
                                 }
                                 break;
