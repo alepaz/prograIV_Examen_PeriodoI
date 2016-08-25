@@ -33,7 +33,6 @@
             this.cbxRegistro = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ssrbtn = new System.Windows.Forms.RadioButton();
@@ -47,10 +46,21 @@
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Edad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estatura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtEstatura = new System.Windows.Forms.TextBox();
+            this.txtEdad = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
@@ -107,21 +117,10 @@
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button3.Location = new System.Drawing.Point(53, 70);
-            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(145, 42);
-            this.button3.TabIndex = 5;
-            this.button3.Text = "Agregar Dato";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
             // button4
             // 
             this.button4.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button4.Location = new System.Drawing.Point(53, 119);
+            this.button4.Location = new System.Drawing.Point(53, 71);
             this.button4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(145, 42);
@@ -209,13 +208,12 @@
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.button3);
             this.groupBox3.Controls.Add(this.button4);
             this.groupBox3.Location = new System.Drawing.Point(47, 340);
             this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox3.Size = new System.Drawing.Size(267, 172);
+            this.groupBox3.Size = new System.Drawing.Size(267, 128);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Acciones";
@@ -234,7 +232,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(603, 494);
+            this.dataGridView1.Size = new System.Drawing.Size(603, 450);
             this.dataGridView1.TabIndex = 10;
             // 
             // Nombre
@@ -261,12 +259,105 @@
             this.Estatura.Name = "Estatura";
             this.Estatura.ReadOnly = true;
             // 
+            // txtEstatura
+            // 
+            this.txtEstatura.Location = new System.Drawing.Point(107, 190);
+            this.txtEstatura.Name = "txtEstatura";
+            this.txtEstatura.Size = new System.Drawing.Size(149, 22);
+            this.txtEstatura.TabIndex = 19;
+            // 
+            // txtEdad
+            // 
+            this.txtEdad.Location = new System.Drawing.Point(107, 138);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(149, 22);
+            this.txtEdad.TabIndex = 18;
+            // 
+            // txtApellido
+            // 
+            this.txtApellido.Location = new System.Drawing.Point(107, 87);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(149, 22);
+            this.txtApellido.TabIndex = 17;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(21, 193);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(65, 17);
+            this.label4.TabIndex = 16;
+            this.label4.Text = "Estatura:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(21, 141);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(45, 17);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Edad:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(21, 90);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(62, 17);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Apellido:";
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnAdd.Location = new System.Drawing.Point(1070, 329);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(119, 50);
+            this.btnAdd.TabIndex = 13;
+            this.btnAdd.Text = "Agregar";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 47);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(62, 17);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "Nombre:";
+            // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(107, 44);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(149, 22);
+            this.txtNombre.TabIndex = 11;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.txtEstatura);
+            this.groupBox4.Controls.Add(this.txtEdad);
+            this.groupBox4.Controls.Add(this.txtNombre);
+            this.groupBox4.Controls.Add(this.txtApellido);
+            this.groupBox4.Controls.Add(this.label6);
+            this.groupBox4.Controls.Add(this.label4);
+            this.groupBox4.Controls.Add(this.label5);
+            this.groupBox4.Controls.Add(this.label3);
+            this.groupBox4.Location = new System.Drawing.Point(990, 86);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(281, 307);
+            this.groupBox4.TabIndex = 20;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Controles Agregar Registro";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(968, 533);
+            this.ClientSize = new System.Drawing.Size(1306, 489);
+            this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -275,6 +366,7 @@
             this.Controls.Add(this.cbxRegistro);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox4);
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -286,6 +378,8 @@
             this.groupBox2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            this.groupBox4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -298,7 +392,6 @@
         private System.Windows.Forms.ComboBox cbxRegistro;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
@@ -312,6 +405,16 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Edad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estatura;
+        private System.Windows.Forms.TextBox txtEstatura;
+        private System.Windows.Forms.TextBox txtEdad;
+        private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.GroupBox groupBox4;
     }
 }
 
