@@ -58,16 +58,18 @@ namespace PrograIV_Examen_PT132129
         private void Form1_Load(object sender, EventArgs e)
         {
             //Values for combobox
-            comboBox1.Items.Add("Nombre");
-            comboBox1.Items.Add("Apellido");
-            comboBox1.Items.Add("Edad");
-            comboBox1.Items.Add("Estatura");
+            cbxRegistro.Items.Add("Nombre");
+            cbxRegistro.Items.Add("Apellido");
+            cbxRegistro.Items.Add("Edad");
+            cbxRegistro.Items.Add("Estatura");
         }
 
-        public void BubbleSort(ref string[] s, ref int[] num) {
+        public void BubbleSort(ref string[] s, ref int[] num, bool band) {
             string temp = string.Empty;
             int indiceTemp = 0;
+            //Para cambiar los indices
 
+            if (band) { 
             for (int i = 1; i < s.Length; i++)
                 {
                     for (int j = 0; j < s.Length - i; j++)
@@ -85,43 +87,35 @@ namespace PrograIV_Examen_PT132129
                         }
                     }
                 }
-            for (int i = 0; i < s.Length; i++)
-            {
-                MessageBox.Show(s[i] + " ");
-                MessageBox.Show(num[i] + " ");
-            }
-            }
-
-        public void BubbleSort(ref int[] s, ref int[] num)
-        {
-            int temp = 0;
-            int indiceTemp = 0;
-
-            for (int i = 1; i < s.Length; i++)
-            {
-                for (int j = 0; j < s.Length - i; j++)
-                {
-                    if (s[j].CompareTo(s[j + 1]) > 0)
+            }else { 
+            for (int i = 0; i < s.Length - 1; i++)
+                for (int j = i + 1; j < s.Length; j++)
+                    if (s[i].CompareTo(s[j]) < 0)
                     {
-                        indiceTemp = num[j];
-                        temp = s[j];
+                        indiceTemp = num[i];
+                        temp = s[i];
 
-                        num[j] = num[j + 1];
-                        s[j] = s[j + 1];
+                        num[i] = num[j];
+                        s[i] = s[j];
 
-                        num[j + 1] = indiceTemp;
-                        s[j + 1] = temp;
+                        num[j] = indiceTemp;
+                        s[j] = temp;
                     }
-                }
             }
-            for (int i = 0; i < s.Length; i++)
+            /*for (int i = 0; i < s.Length; i++)
             {
                 MessageBox.Show(s[i] + " ");
                 MessageBox.Show(num[i] + " ");
-            }
+            }*/
         }
 
+        public void ClearDataGrid() {
+            //Limpiamos y refrescamos
+            dataGridView1.Rows.Clear();
+            dataGridView1.Refresh();
+        }
 
+      
         private void button2_Click(object sender, EventArgs e)
         {
             //contador
@@ -131,19 +125,17 @@ namespace PrograIV_Examen_PT132129
             //para almacenar los datos a ordenar
             string[] column0Array = new string[dataGridView1.Rows.Count];
             string[] column1Array = new string[dataGridView1.Rows.Count];
-            int[] column2Array = new int[dataGridView1.Rows.Count];
+            string[] column2Array = new string[dataGridView1.Rows.Count];
             string[] column3Array = new string[dataGridView1.Rows.Count];
 
             //Arrays con los datos para limpiar el datagridview
             foreach (DataGridViewRow row in dataGridView1.Rows)
             {
                 column0Array[i] = row.Cells[0].Value != null ? row.Cells[0].Value.ToString() : string.Empty;
-                MessageBox.Show(column0Array[i].ToString());
                 column1Array[i] = row.Cells[1].Value != null ? row.Cells[1].Value.ToString() : string.Empty;
-                column2Array[i] = row.Cells[2].Value != null ? int.Parse(row.Cells[2].Value.ToString()) : 0;
+                column2Array[i] = row.Cells[2].Value != null ? row.Cells[2].Value.ToString() : string.Empty;
                 column3Array[i] = row.Cells[3].Value != null ? row.Cells[3].Value.ToString() : string.Empty;
                 arreglo_numeros[i] = i;
-                MessageBox.Show(arreglo_numeros[i].ToString());
                 i++;
                 
             }
@@ -156,22 +148,147 @@ namespace PrograIV_Examen_PT132129
                 if (asrbtn.Checked)
                 {
 
-                    BubbleSort(ref column0Array, ref arreglo_numeros);
-                    //BubbleSort(ref column0Array);
+                    try
+                    {
 
-                    dataGridView1.Rows.Clear();
-                    dataGridView1.Refresh();
+                        switch (cbxRegistro.SelectedItem.ToString())
+                        {
+                            case "Nombre":
+                                BubbleSort(ref column0Array, ref arreglo_numeros, true);
 
-                    for (i = 0; i < arreglo_numeros.Length; i++) {
-                        dataGridView1.Rows.Add(column0Array[i], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+                                //Limpiamos el datagridview
+                                ClearDataGrid();
+
+                                //En caso que sea ordenado por nombre
+                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                {
+                                    dataGridView1.Rows.Add(column0Array[i], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                }
+
+                                break;
+                            case "Apellido":
+                                BubbleSort(ref column1Array, ref arreglo_numeros, true);
+
+                                //Limpiamos el datagridview
+                                ClearDataGrid();
+
+                                //En caso que sea ordenado por apellido
+                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                {
+                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[i], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                }
+                                break;
+                            case "Edad":
+
+                                BubbleSort(ref column2Array, ref arreglo_numeros, true);
+
+                                //Limpiamos el datagridview
+                                ClearDataGrid();
+
+                                //En caso que sea ordenado por edad
+                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                {
+                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[i], column3Array[arreglo_numeros[i]]);
+
+                                }
+                                break;
+                            case "Estatura":
+                                BubbleSort(ref column3Array, ref arreglo_numeros, true);
+
+                                //Limpiamos el datagridview
+                                ClearDataGrid();
+
+                                //En caso que sea ordenado por altura
+                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                {
+                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[i]);
+
+                                }
+                                break;
+                            default:
+                                MessageBox.Show("opcion incorrecta");
+                                break;
+                        }
 
                     }
-
-
+                    catch {
+                        MessageBox.Show("Por favor seleccione el dato por el que desea ordenarlo");
+                    }
                 }
                 else
                 {
                     //BubbleSort & Descendente
+                    try
+                    {
+
+                        switch (cbxRegistro.SelectedItem.ToString())
+                        {
+                            case "Nombre":
+                                BubbleSort(ref column0Array, ref arreglo_numeros, false);
+
+                                //Limpiamos el datagridview
+                                ClearDataGrid();
+
+                                //En caso que sea ordenado por nombre
+                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                {
+                                    dataGridView1.Rows.Add(column0Array[i], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                }
+
+                                break;
+                            case "Apellido":
+                                BubbleSort(ref column1Array, ref arreglo_numeros, false);
+
+                                //Limpiamos el datagridview
+                                ClearDataGrid();
+
+                                //En caso que sea ordenado por apellido
+                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                {
+                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[i], column2Array[arreglo_numeros[i]], column3Array[arreglo_numeros[i]]);
+
+                                }
+                                break;
+                            case "Edad":
+
+                                BubbleSort(ref column2Array, ref arreglo_numeros, false);
+
+                                //Limpiamos el datagridview
+                                ClearDataGrid();
+
+                                //En caso que sea ordenado por edad
+                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                {
+                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[i], column3Array[arreglo_numeros[i]]);
+
+                                }
+                                break;
+                            case "Estatura":
+                                BubbleSort(ref column3Array, ref arreglo_numeros, false);
+
+                                //Limpiamos el datagridview
+                                ClearDataGrid();
+
+                                //En caso que sea ordenado por altura
+                                for (i = 0; i < arreglo_numeros.Length; i++)
+                                {
+                                    dataGridView1.Rows.Add(column0Array[arreglo_numeros[i]], column1Array[arreglo_numeros[i]], column2Array[arreglo_numeros[i]], column3Array[i]);
+
+                                }
+                                break;
+                            default:
+                                MessageBox.Show("opcion incorrecta");
+                                break;
+                        }
+
+                    }
+                    catch
+                    {
+                        MessageBox.Show("Por favor seleccione el dato por el que desea ordenarlo");
+                    }
 
                 }
             
